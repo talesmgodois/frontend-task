@@ -1,0 +1,27 @@
+<form class="example-form" fxLayout="column" *ngIf="currentNote">
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Title"
+      [(ngModel)]="currentNote.title"
+      name="title"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Write your currentNote here..."
+      [(ngModel)]="currentNote.content"
+      name="content"
+    ></textarea>
+  </mat-form-field>
+
+  <button mat-button color="primary" mat-raised-button (click)="update()">
+    Update
+  </button>
+</form>
+
+<div *ngIf="!currentNote">
+  Sorry, I believe this does not exists anymore
+</div>

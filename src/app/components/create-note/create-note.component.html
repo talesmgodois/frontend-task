@@ -1,0 +1,24 @@
+<form class="example-form" fxLayout="column">
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="note.title" name="title" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Write your note here..."
+      [(ngModel)]="note.content"
+      name="content"
+    ></textarea>
+  </mat-form-field>
+
+  <button
+    mat-button
+    color="primary"
+    type="submit"
+    mat-raised-button
+    (click)="create()"
+  >
+    Add
+  </button>
+</form>

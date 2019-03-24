@@ -1,0 +1,6 @@
+<mat-list-item [ngStyle]="getStyle()" *ngIf="model">
+  <h4 matLine (click)="navigate()" class="clickable">{{ model.title }}</h4>
+  <button mat-icon-button (click)="remove()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-list-item>

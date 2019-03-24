@@ -1,0 +1,28 @@
+<div class="list-content">
+    <div fxLayout="row">
+            <mat-form-field>
+                    <input matInput placeholder="Search" [(ngModel)]="searchText" />
+                  </mat-form-field>
+    </div>
+
+
+    <mat-toolbar>
+            <span class="example-spacer"></span>
+        <span>Delete All</span>
+        <button mat-icon-button (click)= "deleteAll()">
+                <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+        </button>
+        
+
+    </mat-toolbar>
+  <mat-list *ngIf = "notes.length > 0">
+    <mat-list-item *ngFor="let note of getNotes()">
+      <app-node-detail fxFlex [model]="note"></app-node-detail>
+      
+    </mat-list-item>
+  </mat-list>
+
+  <mat-card *ngIf = "notes.length === 0">
+    Without notes =(
+  </mat-card>
+</div>

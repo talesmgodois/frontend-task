@@ -1,0 +1,22 @@
+<div fxFlex fxLayout="column">
+  <mat-toolbar color="primary">
+    <h1>Welcome to adeva-notes!</h1>
+    <span class="example-spacer"></span>
+    <button mat-icon-button>
+      <mat-icon aria-hidden="false" aria-label="Add Note" (click)="goHome()"
+        >add</mat-icon
+      >
+    </button>
+  </mat-toolbar>
+  <div fxLayout="column" class="container">
+    <mat-sidenav-container fxLayout="row" fxFlex>
+      <mat-sidenav #notesList mode="side" opened class="leftNav">
+        <app-list-notes [notes]="getNotes()"> </app-list-notes>
+      </mat-sidenav>
+
+      <mat-sidenav-content class="sidenav-content" fxFlex>
+        <app-manage-note fxFlex></app-manage-note>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
